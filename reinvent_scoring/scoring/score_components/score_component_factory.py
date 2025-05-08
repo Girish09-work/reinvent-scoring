@@ -12,6 +12,9 @@ from reinvent_scoring.scoring.score_components import TanimotoSimilarity, \
     LinkerLengthRatio, LinkerGraphLength, LinkerEffectiveLength, LinkerNumRings, LinkerNumAliphaticRings, \
     LinkerNumAromaticRings, LinkerNumSPAtoms, LinkerNumSP2Atoms, LinkerNumSP3Atoms, LinkerNumHBA, \
     LinkerNumHBD, LinkerMolWeight, LinkerRatioRotatableBonds, DockStream, NumAromaticRings, NumAliphaticRings
+
+# Import the new RDKit shape components
+from reinvent_scoring.scoring.score_components.rdkit_shape import RDKitShapeSimilarity, ParallelRDKitShapeSimilarity
     
 from reinvent_scoring.scoring.score_components.rest.general_rest_component import GeneralRESTComponent
    
@@ -23,7 +26,7 @@ class ScoreComponentFactory:
         self._parameters = parameters
         self._current_components = self._deafult_scoring_component_registry()
 
-    def _deafult_scoring_component_registry(self) -> dict:
+    def _default_scoring_component_registry(self) -> dict:
         enum = ScoringFunctionComponentNameEnum()
         component_map = {
             enum.MATCHING_SUBSTRUCTURE: MatchingSubstructure,
@@ -78,7 +81,9 @@ class ScoreComponentFactory:
             enum.DOCKSTREAM: DockStream,
             enum.ICOLOS: Icolos,
             # enum.AIZYNTH: BuildingBlockAvailabilityComponent
-            enum.GENERAL_REST: GeneralRESTComponent
+            enum.GENERAL_REST: GeneralRESTComponent,
+            enum.RDKIT_SHAPE_SIMILARITY: RDKitShapeSimilarity,
+            enum.PARALLEL_RDKIT_SHAPE_SIMILARITY: ParallelRDKitShapeSimilarity,
         }
         return component_map
 

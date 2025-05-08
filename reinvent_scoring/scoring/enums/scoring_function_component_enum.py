@@ -63,3 +63,7 @@ class ScoringFunctionComponentNameEnum:
     QPTUNA_PIP_MODEL = "optuna-multi"
     THP1_CYTOTOXICITY = "thp1-class"
     GENERAL_REST = "general_rest"
+
+    # Add new RDKit shape components
+    RDKIT_SHAPE_SIMILARITY = "rdkit_shape_similarity"
+    PARALLEL_RDKIT_SHAPE_SIMILARITY = "parallel_rdkit_shape_similarity"

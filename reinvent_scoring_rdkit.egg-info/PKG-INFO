@@ -1,42 +1,21 @@
-# Reinvent Scoring with RDKit Shape Components
+Metadata-Version: 2.1
+Name: reinvent-scoring-rdkit
+Version: 0.0.74
+Summary: Scoring functions for Reinvent
+Home-page: https://github.com/Girish09-work/reinvent-scoring
+Author: Girish.C
+Author-email: girishchiluveru09@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
 
-This package is a fork of the original [reinvent-scoring](https://github.com/Girish09-work/reinvent-scoring) package with additional RDKit-based shape similarity components.
+# Introduction
+This package contains the scoring functions for REINVENT.
 
-## Added Features
-
-- `rdkit_shape_similarity`: An open-source alternative to ROCS similarity using RDKit
-- `parallel_rdkit_shape_similarity`: A parallel version for faster processing
-
-## Why This Fork?
-
-The original package relies on OpenEye's ROCS for 3D shape similarity, which requires a commercial license. This fork adds RDKit-based alternatives that provide similar functionality using open-source tools.
-
-## Installation
-
-```bash
-pip install reinvent-scoring-rdkit
-```
-
-## Usage
-
-```json
-{
-    "component_type": "rdkit_shape_similarity",
-    "name": "RDKit Shape Similarity",
-    "weight": 1.0,
-    "specific_parameters": {
-        "reference_file": "path/to/reference.sdf",
-        "method": "usrcat",
-        "shape_weight": 0.5,
-        "color_weight": 0.5,
-        "max_confs": 50
-    }
-}
-```
-
-## Original Package
-
-This package is based on the original reinvent-scoring package. All credit for the original code goes to the original authors.
+# Installation
+To install in REINVENT's environment either install from repo or use `pip install reinvent-scoring` for the latest
+official release.
 
 # Developing
 ## Setup environment
