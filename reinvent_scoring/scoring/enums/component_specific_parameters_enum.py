@@ -27,6 +27,10 @@ class ComponentSpecificParametersEnum:
     ICOLOS_EXECUTOR_PATH = "executor_path"
     ICOLOS_VALUES_KEY = "values_key"
     ICOLOS_DEBUG = "debug"
+
+    # ROSHAMBO
+    ROSHAMBO_ENVPATH = "environment_path"
+    ROSHAMBO_DEBUG = "debug"
     #######################
 
     RAT_PK_PROPERTY = "rat_pk_property"

@@ -23,7 +23,7 @@ class BaseScoreComponent(ABC):
         raise NotImplementedError("calculate_score method is not implemented")
 
     def calculate_score_for_step(self, molecules: List, step=-1) -> ComponentSummary:
-        return self.calculate_score(molecules)
+        return self.calculate_score(molecules, step)
 
     def _assign_transformation(self, specific_parameters: {}):
         transformation_type = TransformationTypeEnum()

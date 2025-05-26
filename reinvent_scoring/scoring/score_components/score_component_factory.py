@@ -15,16 +15,19 @@ from reinvent_scoring.scoring.score_components import TanimotoSimilarity, \
 
 # Import the new RDKit shape components
 from reinvent_scoring.scoring.score_components.rdkit_shape import RDKitShapeSimilarity, ParallelRDKitShapeSimilarity
-    
+
+# Import the Roshambo shape components
+from reinvent_scoring.scoring.score_components.roshambo import RoshamboShapeSimilarity, ParallelRoshamboShapeSimilarity
+
 from reinvent_scoring.scoring.score_components.rest.general_rest_component import GeneralRESTComponent
-   
+
 from reinvent_scoring.scoring.score_components.console_invoked import Icolos
 
 
 class ScoreComponentFactory:
     def __init__(self, parameters: List[ComponentParameters]):
         self._parameters = parameters
-        self._current_components = self._deafult_scoring_component_registry()
+        self._current_components = self._default_scoring_component_registry()
 
     def _default_scoring_component_registry(self) -> dict:
         enum = ScoringFunctionComponentNameEnum()
@@ -84,10 +87,12 @@ class ScoreComponentFactory:
             enum.GENERAL_REST: GeneralRESTComponent,
             enum.RDKIT_SHAPE_SIMILARITY: RDKitShapeSimilarity,
             enum.PARALLEL_RDKIT_SHAPE_SIMILARITY: ParallelRDKitShapeSimilarity,
+            enum.ROSHAMBO_SHAPE_SIMILARITY: RoshamboShapeSimilarity,
+            enum.PARALLEL_ROSHAMBO_SHAPE_SIMILARITY: ParallelRoshamboShapeSimilarity,
         }
         return component_map
 
-    def create_score_components(self) -> [BaseScoreComponent]:
+    def create_score_components(self) -> List[BaseScoreComponent]:
         def create_component(component_params):
             if component_params.component_type in self._current_components:
                 component = self._current_components[component_params.component_type]

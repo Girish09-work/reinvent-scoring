@@ -67,3 +67,7 @@ class ScoringFunctionComponentNameEnum:
     # Add new RDKit shape components
     RDKIT_SHAPE_SIMILARITY = "rdkit_shape_similarity"
     PARALLEL_RDKIT_SHAPE_SIMILARITY = "parallel_rdkit_shape_similarity"
+
+    # Add Roshambo shape components
+    ROSHAMBO_SHAPE_SIMILARITY = "roshambo_shape_similarity"
+    PARALLEL_ROSHAMBO_SHAPE_SIMILARITY = "parallel_roshambo_shape_similarity"

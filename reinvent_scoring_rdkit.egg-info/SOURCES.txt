@@ -3,6 +3,7 @@ setup.py
 reinvent_scoring/__init__.py
 reinvent_scoring/configs/__init__.py
 reinvent_scoring/configs/config.py
+reinvent_scoring/configs/test_config.json
 reinvent_scoring/scoring/__init__.py
 reinvent_scoring/scoring/component_parameters.py
 reinvent_scoring/scoring/score_summary.py
@@ -52,6 +53,7 @@ reinvent_scoring/scoring/enums/logging_mode_enum.py
 reinvent_scoring/scoring/enums/rocs_input_file_types_enum.py
 reinvent_scoring/scoring/enums/rocs_similarity_measures_enum.py
 reinvent_scoring/scoring/enums/rocs_specific_parameters_enum.py
+reinvent_scoring/scoring/enums/roshambo_specific_parameters_enum.py
 reinvent_scoring/scoring/enums/scoring_function_component_enum.py
 reinvent_scoring/scoring/enums/scoring_function_enum.py
 reinvent_scoring/scoring/enums/transformation_parameters_enum.py
@@ -123,6 +125,11 @@ reinvent_scoring/scoring/score_components/rocs/oefuncs.py
 reinvent_scoring/scoring/score_components/rocs/oehelper.py
 reinvent_scoring/scoring/score_components/rocs/parallel_rocs_similarity.py
 reinvent_scoring/scoring/score_components/rocs/rocs_similarity.py
+reinvent_scoring/scoring/score_components/roshambo/__init__.py
+reinvent_scoring/scoring/score_components/roshambo/dynamic_environment_manager.py
+reinvent_scoring/scoring/score_components/roshambo/parallel_roshambo_shape_similarity.py
+reinvent_scoring/scoring/score_components/roshambo/rdkit_conformer_generator.py
+reinvent_scoring/scoring/score_components/roshambo/roshambo_shape_similarity.py
 reinvent_scoring/scoring/score_components/standard/__init__.py
 reinvent_scoring/scoring/score_components/standard/chemprop_component.py
 reinvent_scoring/scoring/score_components/standard/custom_alerts_component.py

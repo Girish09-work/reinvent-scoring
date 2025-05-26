@@ -17,6 +17,14 @@ import reinvent_scoring
 print(reinvent_scoring.__version__)
 ```
 
+## Key Differences from Original Package
+
+This package is a fork of the original `reinvent-scoring` package with these key differences:
+
+1. **Open-Source Shape Similarity**: Uses RDKit instead of OpenEye's ROCS for 3D shape comparison
+2. **No License Required**: All components work without commercial licenses
+3. **Import Compatibility**: Uses the same import structure as the original package
+
 ## Using RDKit Shape Components
 
 The package provides two main components:
@@ -168,6 +176,51 @@ To use this scoring function in Reinvent, save your configuration to a JSON file
         // Other Reinvent parameters...
     }
 }
+```
+
+## Custom Configuration (Optional)
+
+If you need to customize the package configuration:
+
+1. Create a JSON configuration file (e.g., `config.json`):
+
+```json
+{
+  "DEVELOPMENT_ENVIRONMENT": false,
+  "MAIN_TEST_PATH": "tmp_test_folder",
+  "COMPONENT_SPECIFIC": {
+    "AZDOCK": {
+      "AZDOCK_DOCKER_SCRIPT_PATH": "",
+      "AZDOCK_ENV_PATH": "",
+      "AZDOCK_DEBUG": false
+    },
+    "DOCKSTREAM": {
+      "DOCKSTREAM_DOCKER_SCRIPT_PATH": "",
+      "DOCKSTREAM_ENV_PATH": "",
+      "DOCKSTREAM_DEBUG": false
+    },
+    "ICOLOS": {
+      "ICOLOS_EXECUTOR_PATH": "",
+      "ICOLOS_DEBUG": false
+    }
+  },
+  "ENVIRONMENTAL_VARIABLES": {
+    "PIP_URL": "",
+    "PIP_KEY": "",
+    "PIP_GET_RESULTS": ""
+  }
+}
+```
+
+2. When running your scripts, specify the config file location:
+
+```python
+import sys
+sys.argv.append('--base_config')
+sys.argv.append('/path/to/your/config.json')
+
+# Then import reinvent_scoring
+import reinvent_scoring
 ```
 
 ## Preparing Reference Files
