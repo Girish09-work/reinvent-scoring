@@ -70,4 +70,3 @@ class ScoringFunctionComponentNameEnum:
 
     # Add Roshambo shape components
     ROSHAMBO_SHAPE_SIMILARITY = "roshambo_shape_similarity"
-    PARALLEL_ROSHAMBO_SHAPE_SIMILARITY = "parallel_roshambo_shape_similarity"

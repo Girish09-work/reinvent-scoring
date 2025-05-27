@@ -17,7 +17,7 @@ from reinvent_scoring.scoring.score_components import TanimotoSimilarity, \
 from reinvent_scoring.scoring.score_components.rdkit_shape import RDKitShapeSimilarity, ParallelRDKitShapeSimilarity
 
 # Import the Roshambo shape components
-from reinvent_scoring.scoring.score_components.roshambo import RoshamboShapeSimilarity, ParallelRoshamboShapeSimilarity
+from reinvent_scoring.scoring.score_components.roshambo import RoshamboShapeSimilarity
 
 from reinvent_scoring.scoring.score_components.rest.general_rest_component import GeneralRESTComponent
 
@@ -88,7 +88,6 @@ class ScoreComponentFactory:
             enum.RDKIT_SHAPE_SIMILARITY: RDKitShapeSimilarity,
             enum.PARALLEL_RDKIT_SHAPE_SIMILARITY: ParallelRDKitShapeSimilarity,
             enum.ROSHAMBO_SHAPE_SIMILARITY: RoshamboShapeSimilarity,
-            enum.PARALLEL_ROSHAMBO_SHAPE_SIMILARITY: ParallelRoshamboShapeSimilarity,
         }
         return component_map
 
